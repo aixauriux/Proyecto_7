@@ -1,0 +1,217 @@
+
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #392b4b;
+    background-color: #f8f5ff;
+}
+
+/* Contenedor principal */
+.contenedor {
+    max-width: 950px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 40px 50px;
+    border: 2px solid #a58bc5;
+    border-radius: 30px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
+}
+
+/* Formulario */
+.formulario {
+    flex: 1;
+    min-width: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    min-height: 43px;
+    padding: 10px;
+    border: 2px solid #9c83b8;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #392b4b;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+input::placeholder {
+    color: #71657e;
+}
+
+/* Estado de enfoque */
+input:focus {
+    outline: 3px solid #c4a9ed;
+    outline-offset: 3px;
+}
+
+/* Campo con error */
+input[aria-invalid="true"] {
+    border-color: #b42355;
+    color: #a51d4b;
+}
+
+.error {
+    margin: 8px 0 10px;
+    padding-left: 3px;
+    color: #a51d4b;
+    font-size: 14px;
+}
+
+/* Contraseñas */
+.campo-contrasena {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.campo-contrasena input {
+    padding-right: 45px;
+}
+
+.ver-contrasena {
+    position: absolute;
+    right: 8px;
+    border: none;
+    background: transparent;
+    color: #62417e;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.ver-contrasena:focus-visible,
+.actualizar:focus-visible {
+    outline: 3px solid #c4a9ed;
+    outline-offset: 4px;
+}
+
+/* Botón de actualizar */
+.actualizar {
+    margin-top: 24px;
+    min-height: 50px;
+    border: 2px solid #67418b;
+    border-radius: 12px;
+    background-color: #67418b;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.actualizar:hover {
+    background-color: #4e306d;
+}
+
+/* Información del perfil */
+.informacion {
+    width: 225px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.progreso {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px;
+    border: 4px solid #d5c7e6;
+    border-left-color: #67418b;
+    border-bottom-color: #67418b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-40deg);
+}
+
+.progreso span {
+    font-size: 26px;
+    font-weight: bold;
+    transform: rotate(40deg);
+}
+
+.informacion h2 {
+    margin-bottom: 25px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* Lista de tareas */
+.tareas {
+    min-height: 265px;
+    padding: 20px;
+    border-radius: 28px;
+    background-color: #eee7f7;
+    text-align: left;
+}
+
+.tareas ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tareas li {
+    margin-bottom: 10px;
+    color: #392b4b;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.tareas .completada {
+    color: #71657e;
+    text-decoration: line-through;
+}
+
+/* Diseño para celulares y tabletas */
+@media (max-width: 700px) {
+    body {
+        padding: 12px;
+    }
+
+    .contenedor {
+        margin: 10px auto;
+        padding: 25px 20px;
+        flex-direction: column;
+        gap: 35px;
+        border-radius: 22px;
+    }
+
+    .formulario {
+        width: 100%;
+    }
+
+    .informacion {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .tareas {
+        min-height: auto;
+    }
+
+    .progreso {
+        width: 100px;
+        height: 100px;
+    }
+}
